@@ -9,26 +9,33 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author DELL
+ * @author Yamil Serrano
+ *Paul Pasaca
+ *Byron Montaño
+ *Franco Mendoza
  */
 public class PreguntaAdicion implements PreguntaEntera{
     //creamos las variables para las preguntas 
-    private int num1;
-    private int num2;
+    private int numero1;
+    private int numero2;
     private String lista;
     
     public String getPregunta (){//Nos retorna la pregunta 
-      return "Cuanto es "+num1+" + "+num2;    
+      
+        return "Cuanto es "+numero1+" + "+numero2;    
     }
     
     public int getRespuestaCorrecta(){//Retorna el resultado correcto de la pregunta
-       return (num1+num2);
+      
+        return (numero1+numero2);
     }
 
     public String compararRespuesta(int respuestaU){//Compara si la respuesta dada por el usuario es correcta
+       
         if (respuestaU==getRespuestaCorrecta()) {//si la respuesta es correcta se guarda en la variable Lista la pregunta y la respuesta dada por el usuario
             //JOptionPane.showMessageDialog(null, getPregunta()+"="+getRespuestaCorrecta()+ " Correcta");
             lista=getPregunta()+"="+getRespuestaCorrecta()+ " Correcta";
+            
         }else{//Si la respuesta es incorrecta se guarda en la variable lista la pregunta con la respuesta del usuario
             //JOptionPane.showMessageDialog(null, getPregunta()+"="+getRespuestaCorrecta()+ " Tu respuesta: "+respuestaU+" Incorrecta");
             lista=getPregunta()+"="+getRespuestaCorrecta()+ "  Tu respuesta: "+respuestaU+" Incorrecta";
@@ -37,8 +44,9 @@ public class PreguntaAdicion implements PreguntaEntera{
     }
     
     public PreguntaAdicion() {//Se generan los numeros aleatorios para la pregunta
-        this.num1 = (int) (Math.random()*50+1);
-        this.num2 = (int) (Math.random()*50);
+       
+        this.numero1 = (int) (Math.random()*50+1);
+        this.numero2 = (int) (Math.random()*50);
         
     }
 
