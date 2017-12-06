@@ -7,34 +7,37 @@ package TestdePreguntasInterface;
 
 /**
  *
- * @author DELL
+ * @author Yamil Serrano
+ *Paul Pasaca   
+ *Byron Montaño
+ *Franco Mendoza
  */
 public class PreguntaMultiplicacion implements PreguntaEntera{
-    private int num1;
-    private int num2;
-    private String lista;
+    private int numero1;
+    private int numero2;
+    private String Cadenalista;
     
     public String getPregunta(){
-      return "Cuanto es "+num1+" * "+num2;
+      return "Cuanto es "+numero1+" * "+numero2;
     }
     public int getRespuestaCorrecta(){
-      return num1*num2;
+      return numero1*numero2;
     }
 
     public String compararRespuesta(int respuestaU){
         if (respuestaU==getRespuestaCorrecta()) {
            
-            lista=getPregunta()+"="+getRespuestaCorrecta()+ " Correcta";
+            Cadenalista=getPregunta()+"="+getRespuestaCorrecta()+ " Correcta";
         }else{
             
-            lista=getPregunta()+"="+getRespuestaCorrecta()+ "  Tu respuesta: "+respuestaU+" Incorrecta";
+            Cadenalista=getPregunta()+"="+getRespuestaCorrecta()+ "  Tu respuesta: "+respuestaU+" Incorrecta";
         }
-        return lista;
+        return Cadenalista;
     }
     
     public PreguntaMultiplicacion() {
-        this.num1 = (int) (Math.random()*20+1);
-        this.num2 = (int) (Math.random()*20);
+        this.numero1 = (int) (Math.random()*20+1);
+        this.numero2 = (int) (Math.random()*20);
     }
 
     @Override
